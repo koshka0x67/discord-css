@@ -2412,3 +2412,11 @@ html.platform-osx .scroller-2TZvBN {
         transform: translateY(0);
     }
 }
+/* Premium De-clutter: Hide Gift, GIF, Sticker buttons */
+#app-mount .buttons__524f3 > button:not(:last-child) { 
+    display: none !important; 
+}
+#app-mount .channelTextArea__56a36 .buttons__524f3 {
+    justify-content: flex-end;
+}
+

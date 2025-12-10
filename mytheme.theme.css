@@ -1,13 +1,14 @@
 /**
  * @name Frosted Glass
- * @author Gibbu
+ * @author koshka0x67
  * @version 2.2.0
  * @description Display your picture of choice with adjustable blur and brightness. Dark theme is required.
- * @source https://github.com/DiscordStyles/FrostedGlass
+ * @source https://github.com/koshka0x67/discord-css
  * @invite ZHthyCw
 */
 
 @import url('https://raw.githubusercontent.com/koshka0x67/discord-css/refs/heads/main/mytheme.css');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
     /*
@@ -90,8 +91,12 @@
     --window-roundness: 16px;
     /* Softer corners */
     --scrollbar-colour: rgba(255, 255, 255, 0.1);
-    --link-colour: #58a6ff;
-    /* Cleaner blue */
-    --font: "Inter", "gg sans", sans-serif;
+    --link-colour: #00b0f4;
+    /* DEFAULT: #00b0f4 */
+    /*
+     * Visit https://fonts.google.com and select one to your liking.
+     * Now just follow this tutorial: https://imgur.com/a/CNbw7xC
+     */
+    --font: "Inter", "gg sans";
     --update-notice-1: none;
 }
