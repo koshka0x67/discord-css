@@ -5,6 +5,12 @@
     --TB-position-top: var(--TB-top, var(--window-padding));
     --TB-position-right: var(--window-padding);
     --tint: rgb(var(--tint-colour), var(--tint-brightness));
+    --container-background: rgba(0, 0, 0, 0.4);
+    /* Darker container for better contrast */
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Premium glass border */
+    --transition-speed: 0.2s;
+    /* Consistent interaction speed */
     --foreground-half: rgb(255, 255, 255, 0.025);
     --foreground: rgb(255, 255, 255, 0.05);
     --foreground-double: rgb(255, 255, 255, 0.1);
@@ -15,15 +21,16 @@
     --gradient-90: linear-gradient(var(--gradient-direction), rgb(var(--gradient-primary), 0.9), rgb(var(--gradient-secondary), 0.9));
     --text-shadow: 1;
     --chat-embed: var(--background-secondary);
-    --discord-green: 67, 181, 129;
-    --discord-yellow: 219, 171, 9;
-    --discord-red: 215, 58, 73;
-    --discord-purple: 89, 54, 149;
-    --discord-invisible: 117, 128, 142;
-    --discord-nitro: 255, 115, 250;
-    --discord-blurple: 114, 137, 218;
+    /* Discord Colors Refined */
+    --discord-green: 87, 242, 135;
+    --discord-yellow: 254, 231, 92;
+    --discord-red: 237, 66, 69;
+    --discord-purple: 88, 101, 242;
+    --discord-invisible: 116, 127, 141;
+    --discord-nitro: 244, 127, 255;
+    --discord-blurple: 88, 101, 242;
     --discord-spotify: 29, 185, 84;
-    --discord-twitch: 89, 54, 149;
+    --discord-twitch: 145, 70, 255;
     --discord-xbox: 16, 124, 16;
     --fb-popout-image: var(--popout-modal-image, var(--popout-image));
     --fb-popout-blur: var(--popout-modal-blur, var(--popout-image-blur));
@@ -97,6 +104,10 @@
     padding-top: 0;
     overflow: hidden;
     border-radius: var(--window-roundness);
+    border: var(--glass-border);
+    /* Added glass border */
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3), 0 20px 50px rgba(0, 0, 0, 0.3);
+    /* Premium shadow */
 }
 
 #app-mount .subtitleContainer_f75fb0::before {
@@ -179,8 +190,8 @@ html.custom-theme-background #app-mount .app__160d8::before {
 }
 
 ::-webkit-scrollbar {
-    width: 8px !important;
-    height: 8px !important;
+    width: 6px !important;
+    height: 6px !important;
 }
 
 ::-webkit-scrollbar,
@@ -191,10 +202,14 @@ html.custom-theme-background #app-mount .app__160d8::before {
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px !important;
-    border: none !important;
+    border-radius: 8px !important;
+    border: 2px solid transparent !important;
     background-clip: content-box !important;
     background: var(--scrollbar-colour) !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
 }
 
 ::-webkit-scrollbar-corner {
@@ -215,6 +230,10 @@ input,
 select,
 textarea {
     font-family: var(--font, "gg sans"), "gg sans";
+}
+
+button {
+    transition: all var(--transition-speed, 0.2s) ease;
 }
 
 #app-mount .tooltip__382e7 {
@@ -733,7 +752,9 @@ textarea {
 
 #app-mount .sidebar__5e434 {
     border-radius: 0;
-    background: rgb(0, 0, 0, var(--left-brightness));
+    background: transparent;
+    border-right: var(--glass-border);
+    /* Separator */
 }
 
 #app-mount .sidebar__5e434:after {
@@ -1084,6 +1105,9 @@ textarea {
 }
 
 #app-mount .membersWrap_c8ffbb {
+    min-height: 100%;
+    border-left: var(--glass-border);
+    /* Separator */
     background-color: rgb(0, 0, 0, var(--right-brightness));
 }
 
