@@ -1,102 +1,160 @@
 /**
- * @name minimal
- * @author koshka0x67
- * @version 2.2.0
- * @description Display your picture of choice with adjustable blur and brightness. Dark theme is required.
- * @source https://github.com/koshka0x67/discord-css
- * @invite ZHthyCw
+ * @name T1
+ * @description Simple design with focus on improvements and a horizontal server bar. 🛈 Edit the theme file for more options.
+ * @version 0.10.0
+ * @author Eight_P
+ * @authorLink https://github.com/Eight-P
+ * @website https://betterdiscord.app/theme/T1
+ * @source https://github.com/Eight-P/BD.8P/tree/master/Themes/T1
 */
 
-@import url('https://raw.githubusercontent.com/koshka0x67/discord-css/refs/heads/main/mytheme.css');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url(https://eight-p.github.io/BD.8P/Themes/T1/dist/T1.css);
 
 :root {
-    /*
-   * Background image variables
-   */
-    --background-image: url("https://w.wallhaven.cc/full/7j/wallhaven-7jjo5e.jpg");
-    /* Main background image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
-    --background-image-blur: 5px;
-    /* Blur intensity of --background-image | Must end in px | DEFAULT: 5px */
-    --background-image-size: cover;
-    /* Size of the background image | DEFAUT: cover | OPTIONS: cover, contain */
-    --background-image-position: center;
-    /* Position of background image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
-    /*
-   * User Popout variables
-   * This will only affect the user profile (when clicking on a member in the members list)
-   */
-    --popout-image: var(--background-image);
-    /* Background image for popouts and modals | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
-    --popout-image-blur: 5px;
-    /* Blur intensity of --popout-image | Must end in px | DEFAULT: 5px */
-    --popout-image-size: cover;
-    /* Size of the popout/modal image | DEFAUT: cover | OPTIONS: cover, contain */
-    --popout-image-position: center;
-    /* Position of popout/modal image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
-    /*
-   * Modal & Popout variables
-   */
-    --overlay-image: var(--background-image);
-    /* Background image for popouts and modals | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
-    --overlay-image-blur: var(--background-image-blur);
-    /* Blur intensity of --overlay-image | Must end in px | DEFAULT: 5px */
-    --overlay-image-size: var(--background-image-size);
-    /* Size of the popout/modal image | DEFAUT: cover | OPTIONS: cover, contain */
-    --overlay-image-position: var(--background-image-position);
-    /* Position of popout/modal image | DEAFULT: center | OPTIONS: top, right, bottom, left, center */
-    /*
-   * Home image variables
-   */
-    --home-button-image: url("https://discordstyles.github.io/FrostedGlass/discord.svg");
-    /* Home button image | URL MUST BE A DIRECT LINK (ending in .jpg, .jpeg, .png, .gif) */
-    --home-button-size: 60%;
-    /* Size of the home button image | DEFAUT: cover */
-    --home-button-position: center;
-    /* Position of home button image | DEAFULT: center */
-    /*
-   * Brightness variables
-   */
-    --serverlist-brightness: 0.7;
-    /* Darker for better contrast */
-    --left-brightness: 0.75;
-    /* More readable channel list */
-    --middle-brightness: 0.55;
-    /* Focused content area */
-    --right-brightness: 0;
-    /* Transparent member list for airy feel */
-    --overlay-brightness: 0.7;
-    /* Consistent popout brightness */
-    /*
-   * Gradient variables
-   */
-    --gradient-primary: 90, 100, 230;
-    /* More vibrant blue-purple */
-    --gradient-secondary: 160, 50, 200;
-    /* Deep violet accent */
-    --gradient-direction: 135deg;
-    /* Standard diagonal */
-    /*
-   * Tint variables
-   */
-    --tint-colour: 20, 20, 30;
-    /* Dark slate tint instead of pink for premium feel */
-    --tint-brightness: 0.2;
-    /* Slight boost to visibility */
-    /*
-   * Other variables 
-   */
-    --window-padding: 24px;
-    /* Increased padding for floating effect */
-    --window-roundness: 16px;
-    /* Softer corners */
-    --scrollbar-colour: rgba(255, 255, 255, 0.1);
-    --link-colour: #00b0f4;
-    /* DEFAULT: #00b0f4 */
-    /*
-     * Visit https://fonts.google.com and select one to your liking.
-     * Now just follow this tutorial: https://imgur.com/a/CNbw7xC
-     */
-    --font: "Inter", "gg sans";
-    --update-notice-1: none;
+/*
+==> IMPORTANT <==
+
+- The Theme might not work properly when mixed with others.
+
+- Theme updates are made to match the stable release channel on Windows.
+  Discord's stable client is therefore highly recommended to reduce potential bugs.
+
+- To report any issues, go to: https://github.com/Eight-P/BD.8P/issues
+- Or ask questions at: https://github.com/Eight-P/BD.8P/discussions
+
+
+==> SETTINGS <==
+
+- For more infos check: https://github.com/Eight-P/BD.8P/tree/master/Themes
+
+
+/*  Hide chat input buttons
+/*  -  0: Visible | 1: Hidden */
+
+--hide-chatBtn-nitro: 1 ;
+--hide-chatBtn-gif: 0 ;
+--hide-chatBtn-sticker: 0 ;
+--hide-chatBtn-emoji: 0 ;
+--hide-chatBtn-apps: 0 ;
+
+
+/*  Reduce message buttons unless hovered
+/*  -  0: Show all (default)
+/*  -  1: Reduce until hovered */
+
+--reduce-messageBtns: 0 ;
+
+
+/*  Hide emojis in message buttons
+/*  -  0: Show all (default)
+/*  -  1: Hide until hovered
+/*  -  2: Hidden */
+
+--hide-messageBtnEmojis: 1 ;
+
+
+/*  Button overlay in call view
+/*  -  0: Only show on hover (default)
+/*  -  1: Always show  */
+
+--keep-voiceChannelBtns: 0 ;
+
+
+/*  Visualize chat input when focused/selected
+/*  -  0: Off (default)
+/*  -  1: Highlight */
+
+--highlight-focusedChatInput: 0 ;
+
+
+/*  Show the URL next to a masked link
+/*  -  0: Masked (default)
+/*  -  1: Show URL */
+
+--unmask-links: 0 ;
+
+
+/*  Nitro effects & decorations
+/*  -  0: Visible | 1: Hidden */
+
+--hide-profileEffects: 0 ;
+--hide-avatarDecorations: 0 ;
+--hide-nameplates: 0 ;
+--disable-roleGradients: 0 ;
+--hide-reactionAnimations: 0 ;
+
+
+/*  Clan tags
+/*  -  0: Show all (default)
+/*  -  1: Hide in member list
+/*  -  2: hide all */
+
+--hide-clanTags: 0 ;
+
+
+/*  Folder background-style
+/*  -  0: No background
+/*  -  1: Background */
+
+--serverBar-FolderStyle: 1 ;
+
+
+/*  Space between server bar icons  */
+
+--serverBar-Spacing: 17px ;
+
+
+/*  Scaler/Percentage value for icon size (can make the images look blurry)
+/*  -  100: default | lower number: smaller */
+
+--serverBar-IconSize: 100 ;
+
+
+/*  Backgrounds
+/*  -  can be links, colors or gradients (links must be HTTPS) */
+
+--background-app: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Main-bg.jpg);
+--background-server: url(https://eight-p.github.io/BD.8P/Themes/T1/assets/Server-bg.jpg);
+
+
+/*  Background brightness
+/*  -  lower: darker | higher: brighter */
+
+--backgroundBrightness-app: 80 ;
+--backgroundBrightness-server: 100 ;
+
+
+/*  Background blur effect
+/*  -  0: Off | higher number: more blur */
+
+--backgroundBlur-app: 0 ;
+--backgroundBlur-server: 0 ;
+
+
+/*  Friend activities section in home tab
+/*  -  0: Always show (default)
+/*  -  1: Hide when empty
+/*  -  2: Always Hide */
+
+--hide-friendsActivity: 1 ;
+
+
+/*  Server boost goal in the channel sidebar
+/*  -  0: Visible (default)
+/*  -  1: Hidden */
+
+--hide-serverBoostStats: 0 ;
+
+
+/*  Add Scrollbars
+/*  -  0: Hidden | 1: Visible */
+
+--show-sidebarScrollbar: 0 ;
+--show-memberListScrollbar: 0 ;
+
+
+/*  Change default font
+/*  -  Prioritization: left to right | Fonts should be installed & may need quotation marks */
+
+--font: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif ;
 }
